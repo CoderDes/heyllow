@@ -1,0 +1,28 @@
+{
+  "name": "heyllow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/dist/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node ./dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EugZ/heyllow.git"
+  },
+  "author": "Eugene Zubkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EugZ/heyllow/issues"
+  },
+  "homepage": "https://github.com/EugZ/heyllow#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "@types/node": "^14.11.10",
+    "typescript": "^4.0.3"
+  }
+}
