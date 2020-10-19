@@ -1,11 +1,12 @@
 import express from "express";
 
-import Database from "./db";
+import DatabaseConnection from "./db";
+import api from "./api/index";
 
 const app: express.Application = express();
 const port = 3000 || process.env.PORT;
 
-Database.authenticate()
+DatabaseConnection.authenticate()
   .then(() => {
     console.log("Connected to database successfully.");
 
@@ -16,3 +17,5 @@ Database.authenticate()
   .catch(err => {
     console.error(`Unable to connect to database: ${err}`);
   });
+
+app.use("/api", api);
