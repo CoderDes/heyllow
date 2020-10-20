@@ -68,6 +68,10 @@ class Store {
   public clearCache(): void {
     this.cache.clear();
   }
+
+  public getCache(): Set<Film> {
+    return this.cache;
+  }
 }
 
 export default new Store();
