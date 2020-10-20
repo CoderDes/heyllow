@@ -33,6 +33,10 @@ class RedisStore {
   public set(key: string, value: string): void {
     this.client.set(key, value);
   }
+
+  public clearCache() {
+    this.client.FLUSHDB();
+  }
 }
 
 export default new RedisStore();
