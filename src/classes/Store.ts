@@ -21,20 +21,48 @@ class Store {
   }
 
   public getFilm(title: string): Film | undefined {
-    let target;
-
     for (let film of this.cache) {
       if (film.getTitle() === title) {
-        target = film;
-        break;
+        return film;
       }
     }
-
-    return target;
   }
 
-  public addFilm(film: Film): void {
-    this.cache.add(film);
+  public addFilm(filmResult: any): void {
+    const filmData: any = JSON.parse(JSON.stringify(filmResult));
+    const {
+      title,
+      film_id,
+      description,
+      release_year,
+      language_id,
+      rental_duration,
+      rental_rate,
+      length,
+      replacement_cost,
+      rating,
+      last_update,
+      special_features,
+      fulltext,
+    } = filmData;
+
+    this.cache.add(
+      new Film(
+        title,
+        film_id,
+        description,
+        release_year,
+        language_id,
+        rental_duration,
+        rental_rate,
+        replacement_cost,
+        rating,
+        length,
+        last_update,
+        special_features,
+        fulltext,
+      ),
+    );
   }
 
   public clearCache(): void {
