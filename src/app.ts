@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response, NextFunction } from "express";
 
 import DatabaseConnection from "./db";
 import api from "./api/index";
@@ -19,3 +19,10 @@ DatabaseConnection.authenticate()
   });
 
 app.use("/api", api);
+
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  if (err.name === "SequelizeDatabaseError") {
+    res.status(404).json({ message: err.message });
+  }
+  res.status(500).json({ message: err.message });
+});
