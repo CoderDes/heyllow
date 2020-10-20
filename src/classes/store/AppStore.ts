@@ -1,23 +1,10 @@
-import Film from "./Film";
+import Film from "../Film";
 
-class Store {
+class AppStore {
   private cache: Set<Film>;
 
   constructor() {
     this.cache = new Set();
-  }
-
-  public checkFilm(title: string): boolean {
-    let exists = false;
-
-    for (let film of this.cache) {
-      if (film.getTitle() === title) {
-        exists = true;
-        break;
-      }
-    }
-
-    return exists;
   }
 
   public getFilm(title: string): Film | undefined {
@@ -74,4 +61,4 @@ class Store {
   }
 }
 
-export default new Store();
+export default new AppStore();
