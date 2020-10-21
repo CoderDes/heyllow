@@ -1,17 +1,17 @@
 export default class Film {
-  private title: string;
-  private film_id: number;
-  private description: string;
-  private release_year: number;
-  private language_id: number;
-  private rental_duration: number;
-  private rental_rate: number;
-  private rating: string;
-  private replacement_cost: number;
-  private length: number;
-  private last_update: Date;
-  private special_features: Array<string>;
-  private fulltext: string;
+  private _title: string;
+  private _film_id: number;
+  private _description: string;
+  private _release_year: number;
+  private _language_id: number;
+  private _rental_duration: number;
+  private _rental_rate: number;
+  private _rating: string;
+  private _replacement_cost: number;
+  private _length: number;
+  private _last_update: Date;
+  private _special_features: Array<string>;
+  private _fulltext: string;
 
   constructor(
     title: string,
@@ -28,70 +28,70 @@ export default class Film {
     special_features: Array<string>,
     fulltext: string,
   ) {
-    this.title = title;
-    this.film_id = film_id;
-    this.description = description;
-    this.release_year = release_year;
-    this.language_id = language_id;
-    this.rental_duration = rental_duration;
-    this.rental_rate = Number(rental_rate);
-    this.replacement_cost = Number(replacement_cost);
-    this.rating = rating;
-    this.length = length;
-    this.last_update = last_update;
-    this.special_features = special_features;
-    this.fulltext = fulltext;
+    this._title = title;
+    this._film_id = film_id;
+    this._description = description;
+    this._release_year = release_year;
+    this._language_id = language_id;
+    this._rental_duration = rental_duration;
+    this._rental_rate = Number(rental_rate);
+    this._replacement_cost = Number(replacement_cost);
+    this._rating = rating;
+    this._length = length;
+    this._last_update = last_update;
+    this._special_features = special_features;
+    this._fulltext = fulltext;
   }
 
-  public getTitle(): string {
-    return this.title;
+  public get title(): string {
+    return this._title;
   }
 
-  public getId(): number {
-    return this.film_id;
+  public get id(): number {
+    return this._film_id;
   }
 
-  public getDescription(): string {
-    return this.description;
+  public get description(): string {
+    return this._description;
   }
 
-  public getReleaseYear(): number {
-    return this.release_year;
+  public get releaseYear(): number {
+    return this._release_year;
   }
 
-  public getRentalRate(): number {
-    return this.rental_rate;
+  public get rentalRate(): number {
+    return this._rental_rate;
   }
 
-  public getReplacementCost(): number {
-    return this.replacement_cost;
+  public get replacementCost(): number {
+    return this._replacement_cost;
   }
 
-  public getRentalDuration(): number {
-    return this.rental_duration;
+  public get rentalDuration(): number {
+    return this._rental_duration;
   }
 
-  public getRating(): string {
-    return this.rating;
+  public get rating(): string {
+    return this._rating;
   }
 
-  public getLanguageId(): number {
-    return this.language_id;
+  public get languageId(): number {
+    return this._language_id;
   }
 
-  public getLength(): number {
-    return this.length;
+  public get length(): number {
+    return this._length;
   }
 
-  public getLastUpdate(): Date {
-    return this.last_update;
+  public get lastUpdate(): Date {
+    return this._last_update;
   }
 
-  public getSpecialFeatures(): Array<string> {
-    return this.special_features;
+  public get specialFeatures(): Array<string> {
+    return this._special_features;
   }
 
-  public getFullText(): string {
-    return this.fulltext;
+  public get fullText(): string {
+    return this._fulltext;
   }
 }
