@@ -1,15 +1,15 @@
 import Film from "../Film";
 
 class AppStore {
-  private cache: Set<Film>;
+  private _cache: Set<Film>;
 
   constructor() {
-    this.cache = new Set();
+    this._cache = new Set();
   }
 
   public getFilm(title: string): Film | undefined {
-    for (let film of this.cache) {
-      if (film.getTitle() === title) {
+    for (let film of this._cache) {
+      if (film.title === title) {
         return film;
       }
     }
@@ -33,7 +33,7 @@ class AppStore {
       fulltext,
     } = filmData;
 
-    this.cache.add(
+    this._cache.add(
       new Film(
         title,
         film_id,
@@ -53,11 +53,11 @@ class AppStore {
   }
 
   public clearCache(): void {
-    this.cache.clear();
+    this._cache.clear();
   }
 
-  public getCache(): Set<Film> {
-    return this.cache;
+  public get cache(): Set<Film> {
+    return this._cache;
   }
 }
 
